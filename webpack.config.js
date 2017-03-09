@@ -41,6 +41,20 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: cssLoaders(ExtractTextPlugin, process.env.NODE_ENV)
+            },
+
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    babelrc: false,
+                    cacheDirectory: true,
+                    presets: [
+                        ['env', {useBuiltIns: false}],
+                        ['stage-3']
+                    ],
+                }
             }
 
         ]
