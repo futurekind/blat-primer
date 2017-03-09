@@ -1,0 +1,8 @@
+$color: red;
+
+.foo {
+    color: $color;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+}

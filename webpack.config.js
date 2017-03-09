@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 const HtmlWebpackPluginHelper = require('./.blat-scripts/templates/webpackHtmlTemplateHelper');
 
 const htmlWebpackPlugins = HtmlWebpackPluginHelper().files.map(file => {
@@ -18,7 +20,8 @@ module.exports = {
     },
 
     plugins: [
-        ...htmlWebpackPlugins
+        ...htmlWebpackPlugins,
+        new ExtractTextPlugin('css/main.css'),
     ],
 
     module: {
@@ -32,6 +35,27 @@ module.exports = {
                 options: {
                     interpolate: true
                 }
+            },
+
+            {
+                test: /\.scss$/,
+                use: process.env.NODE_ENV === 'production'
+                    ? ExtractTextPlugin.extract({
+                        fallback: "",
+                        use: [
+                            { loader: 'css-loader' },
+                            { loader: 'postcss-loader' },
+                            { loader: 'sass-loader' },
+                        ]
+                    })
+
+                    : [
+                        { loader: 'style-loader' },
+                        { loader: 'css-loader' },
+                        { loader: 'postcss-loader' },
+                        { loader: 'sass-loader' },
+                    ]
+                
             }
 
         ]
