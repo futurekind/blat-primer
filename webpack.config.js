@@ -12,12 +12,14 @@ const htmlWebpackPlugins = HtmlWebpackPluginHelper().files.map(file => {
 module.exports = {
     entry: [
         './src/js/index',
+        './src/css/index.scss',
         ...HtmlWebpackPluginHelper().files.map(f => f.entry)
     ],
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/bundle.js'
+        filename: 'js/bundle.js',
+        publicPath: '/'
     },
 
     plugins: [
@@ -66,7 +68,35 @@ module.exports = {
                         ['stage-3']
                     ],
                 }
-            }
+            },
+
+            {
+                exclude: [
+                    /\.html$/,
+                    /\.(js|jsx)$/,
+                    /\.css$/,
+                    /\.scss$/,
+                    /\.json$/,
+                    /\.bmp$/,
+                    /\.gif$/,
+                    /\.jpe?g$/,
+                    /\.png$/,
+                    /\.svg$/,
+                ],
+                loader: 'file-loader',
+                options: {
+                    name: 'static/media/[name].[hash:8].[ext]',
+                },
+            },
+
+            {
+                test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
+                loader: 'url-loader',
+                options: {
+                    limit: 10000,
+                    name: 'static/media/[name].[hash:8].[ext]',
+                },
+            },
 
         ]
 
