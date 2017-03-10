@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const HtmlWebpackPluginHelper = require('./.blat-scripts/templates/webpackHtmlTemplateHelper');
+const cssLoaders = require('./.blat-scripts/loaders/cssLoadersHelper');
 
 const htmlWebpackPlugins = HtmlWebpackPluginHelper().files.map(file => {
     return new HtmlWebpackPlugin(file)
@@ -39,23 +40,21 @@ module.exports = {
 
             {
                 test: /\.scss$/,
-                use: process.env.NODE_ENV === 'production'
-                    ? ExtractTextPlugin.extract({
-                        fallback: "",
-                        use: [
-                            { loader: 'css-loader' },
-                            { loader: 'postcss-loader' },
-                            { loader: 'sass-loader' },
-                        ]
-                    })
+                use: cssLoaders(ExtractTextPlugin, process.env.NODE_ENV)
+            },
 
-                    : [
-                        { loader: 'style-loader' },
-                        { loader: 'css-loader' },
-                        { loader: 'postcss-loader' },
-                        { loader: 'sass-loader' },
-                    ]
-                
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    babelrc: false,
+                    cacheDirectory: true,
+                    presets: [
+                        ['env', {useBuiltIns: false}],
+                        ['stage-3']
+                    ],
+                }
             }
 
         ]
