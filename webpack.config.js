@@ -30,6 +30,17 @@ module.exports = {
         rules: [
 
             {
+                test: /\.js$/,
+                enforce: 'pre',
+                include: [ path.resolve(__dirname, 'src') ],
+                loader: 'eslint-loader',
+                options: {
+                    useEslintrc: false,
+                    configFile: path.join(__dirname, '.blat-scripts/eslint/eslintrc')
+                }
+            },
+
+            {
                 test: /\.html$/,
                 include: [ path.resolve(__dirname, 'src') ],
                 loader: 'html-loader',
