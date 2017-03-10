@@ -5,3 +5,4 @@
 [ ] url, image loaders
 [x] NODE_ENV production
 [ ] editorconfig
+[ ] KSS
