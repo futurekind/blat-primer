@@ -1,8 +1,21 @@
-$color: red;
+/*
+<div class="foo">
+    <img src="../media/big.jpg" alt="">
+</div>
+*/
+
+$color: green;
 
 .foo {
     color: $color;
     font-size: 18px;
     font-weight: bold;
     display: flex;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    background-image: url('../media/down.svg') 
 }

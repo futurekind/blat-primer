@@ -1,5 +1,3 @@
-import '../css/index.scss';
-
 const foo = {
     a: 'a',
     b: 'b'
