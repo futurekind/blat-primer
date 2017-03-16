@@ -11,6 +11,7 @@ const htmlWebpackPlugins = HtmlWebpackPluginHelper().files.map(file => {
 
 module.exports = {
     entry: [
+        require.resolve('./.blat-scripts/polyfills.js'),
         './src/js/index',
         './src/css/index.scss',
         ...HtmlWebpackPluginHelper().files.map(f => f.entry)
