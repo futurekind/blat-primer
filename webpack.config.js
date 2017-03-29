@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleguidePlugin = require('./.blat-scripts/plugins/styleguidePlugin');
 
 const HtmlWebpackPluginHelper = require('./.blat-scripts/templates/webpackHtmlTemplateHelper');
 const cssLoaders = require('./.blat-scripts/loaders/cssLoadersHelper');
@@ -26,6 +27,10 @@ module.exports = {
     plugins: [
         ...htmlWebpackPlugins,
         new ExtractTextPlugin('css/main.css'),
+        new StyleguidePlugin({
+            source: 'src/css',
+            destination: 'dist/docs'
+        })
     ],
 
     module: {
