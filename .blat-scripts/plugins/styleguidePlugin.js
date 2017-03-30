@@ -54,7 +54,7 @@ StyleguideWebpackPlugin.prototype.apply = function (compiler) {
       js: self.options.js.concat(self.webpackJs)
     });
 
-    kss(kssOptions);
+    kss(kssOptions, function() {});
   });
 };
 

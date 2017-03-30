@@ -10,6 +10,13 @@ const htmlWebpackPlugins = HtmlWebpackPluginHelper().files.map(file => {
     return new HtmlWebpackPlugin(file)
 })
 
+const styleguidePlugin = new StyleguidePlugin({
+    source: 'src/css',
+    destination: 'dist/docs',
+    template: 'node_modules/bkss/dist/template',
+    title: "Living Styleguide"
+})
+
 module.exports = {
     entry: [
         require.resolve('./.blat-scripts/polyfills.js'),
@@ -27,10 +34,7 @@ module.exports = {
     plugins: [
         ...htmlWebpackPlugins,
         new ExtractTextPlugin('css/main.css'),
-        new StyleguidePlugin({
-            source: 'src/css',
-            destination: 'dist/docs'
-        })
+        styleguidePlugin
     ],
 
     module: {

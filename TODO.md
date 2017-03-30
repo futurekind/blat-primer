@@ -5,7 +5,7 @@
 [x] url, image loaders
 [x] NODE_ENV production
 [x] editorconfig
-[ ] KSS
+[x] KSS
 [ ] font-loader
 [ ] config file für globale Einstellungen wie Aditional CSS, Scripts usw
 [ ] svg-sprite
