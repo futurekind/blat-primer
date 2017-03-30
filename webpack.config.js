@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const pkg = require('./package.json');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleguidePlugin = require('./.blat-scripts/plugins/styleguidePlugin');
@@ -17,6 +19,10 @@ const styleguidePlugin = new StyleguidePlugin({
     title: "Living Styleguide"
 })
 
+const banner = `@package ${pkg.name}
+@version ${pkg.version}
+@build ${new Date().toUTCString()}`
+
 module.exports = {
     entry: [
         require.resolve('./.blat-scripts/polyfills.js'),
@@ -34,7 +40,8 @@ module.exports = {
     plugins: [
         ...htmlWebpackPlugins,
         new ExtractTextPlugin('css/main.css'),
-        styleguidePlugin
+        styleguidePlugin,
+        new webpack.BannerPlugin(banner)
     ],
 
     module: {

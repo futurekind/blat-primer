@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --content-base dist/  --inline --colors --port 8000 --hot",
-    "build": "NODE_ENV=production webpack"
+    "build": "rm -rf dist && NODE_ENV=production webpack"
   },
   "eslintConfig": {
     "extends": "./.blat-scripts/eslint/config.js"
