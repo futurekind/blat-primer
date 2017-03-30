@@ -1,3 +1,4 @@
+import './components/Poster';
 import { createFontLoader } from './lib/Fontloader';
 
 /**

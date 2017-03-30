@@ -1,0 +1,90 @@
+/**
+ * Farben
+ *
+ * Farben werden über die Sass-Funktion `color($family, $variation)` angwendet:
+ *
+ * ```css
+ * .foo {
+ *     color: color('gray', 'medium');
+ * }
+ * ```
+ *
+ * <br>
+ * <div class="kss-color">
+ *     <div class="kss-color__fill" style="background-color: #9B9B9B;"></div>
+ *     `color('gray', 'medium')`
+ * </div>
+ * <div class="kss-color">
+ *     <div class="kss-color__fill" style="background-color: #EBF9FE;"></div>
+ *     `color('blue', 'light')`
+ * </div>
+ * <div class="kss-color">
+ *     <div class="kss-color__fill" style="background-color: #54CCF4;"></div>
+ *     `color('blue', 'regular')`
+ * </div>
+ * <div class="kss-color">
+ *     <div class="kss-color__fill" style="background-color: #4A90E2;"></div>
+ *     `color('blue', 'default')`
+ * </div>
+ *
+ * Styleguide 1.1
+ */
+
+$colors : (
+    'gray': (
+        'medium': #9B9B9B,
+    ),
+    'blue': (
+        'light': #EBF9FE,
+        'regular': #54CCF4,
+        'default': #4A90E2,
+    )
+);
+
+
+/**
+ * Fonts
+ *
+ * Schriftfamilie | Schnitt | Sass | Beispiel
+ * --- | --- | --- | ---
+ * Source Sans Pro | Normal | `$font__primary;` | <span style="font-family: 'Source Sans Pro', sans-serif">Grumpy wizards make toxic brew for the evil Queen and Jack.</span>
+ * &nbsp; | Italic | `$font__primary; font-style: italic;` | <span style="font-family: 'Source Sans Pro', sans-serif; font-style: italic">Grumpy wizards make toxic brew for the evil Queen and Jack.</span>
+ * &nbsp; | Semibold | `$font__primary; font-weight: 600;` | <span style="font-family: 'Source Sans Pro', sans-serif; font-weight: 600">Grumpy wizards make toxic brew for the evil Queen and Jack.</span>
+ * &nbsp; | Bold | `$font__primary; font-weight: 700;` | <span style="font-family: 'Source Sans Pro', sans-serif; font-weight: 700">Grumpy wizards make toxic brew for the evil Queen and Jack.</span>
+ * Droid Serif | Italic | `$font__secondary; font-style: italic` | <span style="font-family: 'Droid Serif', serif; font-style: italic">Grumpy wizards make toxic brew for the evil Queen and Jack.</span>
+ *
+ * Styleguide 1.2
+ */
+
+$font__primary: 'Source Sans Pro', sans-serif;
+$font__secondary: 'Droid Serif', serif;
+
+// Breakpoints
+$breakpoints: (
+    'medium': '(min-width: 40em)',
+    'large': '(min-width:  64em)',
+    'xlarge': '(min-width: 90em)'
+);
+
+// Legacy
+$old-ie: false !default;
+
+// Spacings
+$spacer: 20px;
+
+// Z-Index
+$zi__poster__content: 1;
+
+.kss-color {
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    text-align: center;
+
+    &__fill {
+        width:220px;
+        height: 160px;
+        margin-bottom: 5px;
+    }
+}

@@ -1,24 +1,31 @@
-/*
-Test
+/**
+ * Base
+ *
+ * Styleguide 1
+ */
+@import "base/globals";
+@import "base/mixins";
+@import "base/elements";
 
-Markup:
-<p class="foo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab repellendus unde ullam laboriosam cumque. Consectetur odio ab ducimus earum praesentium, sunt iusto cumque possimus quam, ad harum consequuntur optio. Quos.</p>
+@import "../../node_modules/normalize.css/normalize";
 
-Styleguide 1.0
-*/
+/**
+ * Layout
+ *
+ * Styleguide 2
+ */
 
-$color: green;
+/**
+ * Komponenten
+ *
+ * Styleguide 3
+ */
+@import "components/media";
+@import "components/poster";
 
-.foo {
-    color: $color;
-    font-size: 32px;
-    font-weight: bold;
-    display: flex;
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    display: inline-block;
-    background-image: url('../media/down.svg') 
-}
+/**
+ * Utility & Helper
+ *
+ * Styleguide 4
+ */
+@import "base/utility";

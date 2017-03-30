@@ -1754,6 +1754,10 @@ etag@~1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.8.0.tgz#6f631aef336d6c46362b51764044ce216be3c051"
 
+ev-emitter@~1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/ev-emitter/-/ev-emitter-1.0.3.tgz#ee5ef74b6ed28d911b32ddcbfc97867f580937bc"
+
 event-emitter@~0.3.4:
   version "0.3.4"
   resolved "https://registry.yarnpkg.com/event-emitter/-/event-emitter-0.3.4.tgz#8d63ddfb4cfe1fae3b32ca265c4c720222080bb5"
@@ -2345,6 +2349,12 @@ ieee754@^1.1.4:
 ignore@^3.2.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-3.2.4.tgz#4055e03596729a8fabe45a43c100ad5ed815c4e8"
+
+imagesloaded@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/imagesloaded/-/imagesloaded-4.1.1.tgz#53b5b66615360850a5a264b1293e7f4d06d3bd51"
+  dependencies:
+    ev-emitter "~1.0.0"
 
 imurmurhash@^0.1.4:
   version "0.1.4"
@@ -3141,6 +3151,10 @@ normalize-url@^1.4.0:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+normalize.css@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-6.0.0.tgz#22188c2707c911fb3ad3c1aac0677ff68661bea8"
 
 "npmlog@0 || 1 || 2 || 3 || 4", npmlog@^4.0.0, npmlog@^4.0.1:
   version "4.0.2"

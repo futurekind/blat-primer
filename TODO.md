@@ -11,5 +11,5 @@
 [ ] Jest
 [x] Minify css
 [x] Plugins: Banner, Uglify, DefinePlugin
-[ ] CSS Boilerplate aus 1.x.x
+[x] CSS Boilerplate aus 1.x.x
 [ ] README
