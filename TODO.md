@@ -8,7 +8,7 @@
 [x] KSS
 [x] font-loader
 [ ] config file für globale Einstellungen wie Aditional CSS, Scripts usw
-[ ] svg-sprite
 [ ] Jest
 [ ] Minify css
 [ ] Plugins: Banner, Uglify, DefinePlugin
+[ ] README
