@@ -9,6 +9,7 @@
 [x] font-loader
 [ ] config file für globale Einstellungen wie Aditional CSS, Scripts usw
 [ ] Jest
-[ ] Minify css
-[ ] Plugins: Banner, Uglify, DefinePlugin
+[x] Minify css
+[x] Plugins: Banner, Uglify, DefinePlugin
+[ ] CSS Boilerplate aus 1.x.x
 [ ] README
